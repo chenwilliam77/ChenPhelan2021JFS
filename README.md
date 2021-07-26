@@ -84,7 +84,7 @@ To re-generate all the saved output from scratch, follow these instructions.
 2. Run `compute_eqm_for_benchmarks_etc.m` and `compute_ces_eqms.m` to generate
    some output that is needed by `1good/` and `linear_invst/`
 
-3. Change directory to `hpcc`.
+3. Change directory to `hpcc/`.
 
 4. Run `hpcc/plot_best_response.m` to sketch out the best responses
    and provide a coarse grid of initial guesses for the other scripts.
