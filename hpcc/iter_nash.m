@@ -5,9 +5,8 @@
 
 clear; close all;
 addpath ../parameters;
-% load('data/plot_best_response.mat');
-load('data/gamA1p05_gamB2.mat');
-savefile = 'data/iter_nash_fine_small.mat';
+load('../data/gamA1p05_gamB2.mat');
+savefile = '../data/hpcc/baseline/iter_nash_fine_small.mat';
 vA0 = welf.vA;
 vB0 = welf.vB;
 eta0 = grid.eta;
@@ -18,7 +17,7 @@ N_br_iter = 4;
 % [guessA, guessB] = make_guess_grid(eta0, vA, vB);
 % br_lvgA = lvgA;
 % br_lvgB = lvgB;
-parameters;
+baseline_parameters;
 s.N = 120;
 
 % set up grid of leverage constraints

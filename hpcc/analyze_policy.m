@@ -4,16 +4,18 @@
 % Written by William Chen, Jun. 2019
 
 clear; close all;
+addpath ../parameters;
 
 % Choose the correct output file to analyze and the filename of output in savefile
-% output_file = 'data/welfare_grid.mat'; 
-output_file = 'data/welfare_grid_ceguess.mat';
-% output_file = 'data/sparse_welfare_grid.mat';
-% output_file = 'data/sparse_ceguess.mat';
-savefile = 'data/analyze_welfare_grid.mat';
-% savefile = 'data/analyze_welfare_grid_ceguess.mat';
-% savefile = 'data/analyze_sparse_grid.mat';
-% savefile = 'data/analyze_sparse_ceguess.mat';
+finer_welfare_grid = 1;
+
+if finer_welfare_grid
+	output_file = '../data/hpcc/baseline/finer_welfare_grid.mat';
+	savefile = '../data/hpcc/baseline/analyze_finer_welfare_grid.mat';
+else
+	output_file = '../data/hpcc/baseline/coarser_welfare_grid.mat';
+	savefile = '../data/hpcc/baseline/analyze_coarser_welfare_grid.mat';
+end
 
 %% Settings
 recompute_welf = 0;
@@ -27,8 +29,8 @@ diagnostics = 1; % decide whether to show diagnostics
 
 % enter in competitive equilibrium, no leverage expVA and expVB
 if recompute_ce
-    load('data/gamA1p05_gamB2.mat');
-    parameters;
+    load('../data/gamA1p05_gamB2.mat');
+    baseline_parameters;
     s.eta_tau = 0;
     s.tau = 0;
     s.LA = 1e3;
@@ -67,7 +69,7 @@ if recompute_welf == 1
             welfs{i}.VA = VA; welfs{i}.VB = VB;
             welfs{i}.expVA = expVA;
             welfs{i}.expVB = expVB;
-        end        
+        end
     else
         for i = 1:numel(grids)
             if i / 100 == floor(i / 100)

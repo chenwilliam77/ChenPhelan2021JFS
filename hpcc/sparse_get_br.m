@@ -8,8 +8,8 @@
 %% Set up
 clear; close all;
 addpath ../parameters;
-load('data/plot_best_response.mat');
-savefile = 'data/sparse_welfare_grid.mat';
+load('../data/hpcc/baseline/plot_best_response.mat');
+savefile = '../data/hpcc/baseline/coarser_welfare_grid.mat';
 eta0 = makegrid(s.start, s.end - s.start, s.N);
 [guessA, guessB] = make_guess_grid(eta0, vA, vB);
 br_lvgA = lvgA;

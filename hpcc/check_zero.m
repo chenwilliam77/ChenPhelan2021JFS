@@ -3,8 +3,8 @@
 %
 % Written by William Chen, Jun. 2019
 
-load('data/gamA1p05_gamB2.mat');
-savefile = 'data/check_zero';
+load('../data/gamA1p05_gamB2.mat');
+savefile = '../data/hpcc/baseline/check_zero';
 addpath parameters;
 baseline_parameters;
 s.V_Linftol = 1e-7;

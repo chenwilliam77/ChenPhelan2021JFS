@@ -21,6 +21,7 @@ if saved_guess
 else
 	baseline_parameters;
     [grid, welf, stat] = get_eqm(@(eta) vAfnct(eta, 1, s), @(eta) vBfnct(eta, 1, s), s, 1, 1, 1);
+    save('data/gamA1p05_gamB2.mat');
 end
 
 display_results(grid, welf, stat, 1);

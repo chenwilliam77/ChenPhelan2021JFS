@@ -4,7 +4,7 @@
 % Written by William Chen, Jun. 2019
 
 addpath ../parameters;
-load('data/gamA1p05_gamB2.mat');
+load('../data/gamA1p05_gamB2.mat');
 baseline_parameters;
 pareto_weight = 1/2;
 lvgA = [5; 4; 3; 2; 1; .9; .6; .5; .3; .2; .1; 0];
@@ -51,4 +51,4 @@ plot(lvgB, exp_VB(end - 3,:)); hold off
 
 disp('done');
 
-save('data/plot_best_response.mat');
+save('../data/hpcc/baseline/plot_best_response.mat');
